@@ -15,7 +15,7 @@ in Python. All project libraries are written by me.
   by the **blackjacklib**
 * **blackjacklib** contains various classes and methods including a UI class
   which extends the Display class provided by **clilib**
-* **Blackjack.py** is the main program which depends on the blackjacklib.
+* **Blackjack.py** is the main program which depends on the **blackjacklib**.
   
 <br/>
 <h4 align="center">Preview</h4>
