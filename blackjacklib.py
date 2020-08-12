@@ -61,7 +61,7 @@ Welcome to Blackjack!
   Losses:  {}
 
 
-  (press ENTER to play, ESC to exit)
+  (press ENTER to play, q to quit)
         ''', w, l)
 
     def play(self, show_dealer, *players):

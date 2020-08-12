@@ -2,6 +2,7 @@ from blackjacklib import (
     Card, Deck, Player, DealerAI, UI,
     STAND, HIT, BUST
 )
+from time import sleep
 
 class Game:
 
@@ -22,7 +23,9 @@ class Game:
     def new_game(self):
         self.deal()
         self._UI.start(self._wins, self._losses)
-        if input() == '': self.play()
+        option = input()
+        if option == 'q': exit()
+        if option == '': self.play()
 
     def play(self):
         self._UI.play(False, *self._players)
@@ -35,9 +38,11 @@ class Game:
         ):
             option = input('press 0 to STAND, 1 to HIT: ')
             if option == '1':
+                sleep(.25)
                 self._players[0].add(self._deck.card)
                 self._UI.play(False, *self._players)
 
+        sleep(.25)
         self._UI.play(True, *self._players)
 
         # Mid Game Evaluation
@@ -52,6 +57,7 @@ class Game:
             DealerAI(self._players[1].total) != STAND and
             DealerAI(self._players[1].total) != BUST
         ):
+            sleep(.25)
             self._players[1].add(self._deck.card)
             self._UI.play(True, *self._players)
 
